@@ -13,7 +13,7 @@
             <a class="nav-link" href="#">GENRES</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">CONTACT</a>
+            <a class="nav-link" href="contact.php">CONTACT</a>
           </li>
         </ul>
         <!-- Dropdown -->
