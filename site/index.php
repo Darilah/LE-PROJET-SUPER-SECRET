@@ -1,3 +1,19 @@
+<?php session_start(); // $_SESSION ?>
+
+<?php 
+
+try
+{
+	// On se connecte à MySQL
+	$db = new PDO('mysql:host=localhost;dbname=projet2022;charset=utf8', 'root', 'root');
+}
+catch(Exception $e)
+{
+	// En cas d'erreur, on affiche un message et on arrête tout
+        die('Erreur : '.$e->getMessage());
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +39,13 @@
     <?php include_once('header.php'); ?>
         <h1>Bonjour</h1>
 
+
+    <?php include_once('login.php'); ?>
+
+    </div>
+
     <?php include_once('footer.php'); ?>
+
 </body>
 </html>
 

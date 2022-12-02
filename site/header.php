@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000000;">
     <div class="container-fluid">
       <img src="image.jpg" alt="" width="100" height="55">
-        <ul class="navbar list-unstyled col-md-3 col-md-offset-1">
+        <ul class="navbar list-unstyled col-md-5 col-md-offset-1">
           <li class="nav-item">
             <a class="nav-link-active" aria-current="page" href="index.php">ACCUEIL</a>
           </li>
@@ -25,7 +25,7 @@
             <ul class="dropdown-menu text-small dropdown-menu-dark" style="background-color: #000000; position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 34px);" data-popper-placement="bottom-start">
               <li><a class="dropdown-item" href="#">Mes favoris</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Se déconnecter</a></li>
+              <li><a class="dropdown-item" href="logout.php">Se déconnecter</a></li>
             </ul>
           </div>
         </ul>
