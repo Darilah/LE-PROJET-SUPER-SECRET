@@ -5,7 +5,7 @@
 try
 {
 	// On se connecte à MySQL
-	$db = new PDO('mysql:host=localhost;dbname=projet2022;charset=utf8', 'root', 'root');
+	$db = new PDO('mysql:host=localhost;dbname=projet;charset=utf8', 'root', 'root');
 }
 catch(Exception $e)
 {
