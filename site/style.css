@@ -3,7 +3,7 @@ body{
 }
 
 .container-fluid{
-    color : white;    
+    color : white;
 }
 
 .nav-link-active{
@@ -15,264 +15,304 @@ body{
 }
 
 h1{
-    color : #3DAED2;
-    font-family : Arial, sans-serif;
-    font-weight : bold;
-    -webkit-text-stroke : 1px black;
-    margin-top : 50px;
-    margin-bottom : 1px;
-    text-shadow : rgb(92,27,27) 2px -2px;
-    
-}
-#artiste_name{
-    color : #BD47E7;
+    color : #3DAED2; 
     font-family: Arial, sans-serif;
     font-weight: bold;
-    flex: 1000px;
-    flex: 80px;
-    flex: content;
-    background-image: url("./images/background_artistes_page.png");
+    -webkit-text-stroke: 1px black;
+    margin-bottom:1px;
+    text-shadow: rgb(92, 27, 27) 2px -2px;
 }
 
-/*. c'est une class un # un id*/
-#images_artistes{
-    max-width : 350px;
-    height : auto;
-    float : left;
-    vertical-align : bottom;
+.distance{
+    margin-top: 35px;
+    margin-bottom: 35px;
 }
 
-#artistes_name{
+.bg-image{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
-    font-family: 'Bebas Neue';
-    font-style: normal;
-    font-weight: bold;
-    font-size: 40px;
-    line-height: 48px;
-    color: #3DAED2;
+.featurette img{
+    height: 250px;
+    width: 500px;
+    max-width: 100%;
 }
 
-#description_artiste{
-    text-align: justify;
-    font-family: Arial, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    color : white;
-    flex: 1000px;
-    flex: 80px;
-    overflow: scroll;
-    flex: content;  
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
 
-#ARTISTES{
-    border: solid #211F1F;
-    background: black;
+       .height{
+        height: 100vh;
+       }
+       
+
+       .search{
+       position: relative; 
+       }
+
+       .search input{
+        height: 60px;
+        text-indent: 25px;
+        border: 2px solid #d6d4d4;
+       }
+
+       .btn{
+        background-color: black;
+        border: none;
+       }
+
+       #artiste_name{
+        color : #BD47E7;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        flex: 1000px;
+        flex: 80px;
+        flex: content;
+        background-image: url("./images/background_artistes_page.png");
+    }
     
-    margin: auto;
-    align-items: center;
-   
-}
-
-#ARTISTES img{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin:30px;
-}
-
-.height{
-    height: 100vh;
-}
-
-.search {
-   position: relative; 
-}
-
-.search input{
-    height: 60px;
-    text-indent: 25px;
-    border: 2px solid #d6d4d4;
-}
-
-.btn{
-    background-color: black;
-    border: none;
-}
-
-#fiche_ARTISTES{
-    border: solid #211F1F;
+    /*. c'est une class un # un id*/
+    #images_artistes{
+        max-width : 350px;
+        height : auto;
+        float : left;
+        vertical-align : bottom;
+    }
+    
+    #artistes_name{
+    
+        font-family: 'Bebas Neue';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 48px;
+        color: #3DAED2;
+    }
+    
+    #description_artiste{
+        text-align: justify;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        color : white;
+        flex: 1000px;
+        flex: 80px;
+        overflow: scroll;
+        flex: content;  
+    }
+    
+    #ARTISTES{
+        border: solid #211F1F;
         background: black;
-        display : flex;
+        
+        margin: auto;
+        align-items: center;
+       
+    }
+    
+    #ARTISTES img{
+        display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;
-        margin:30px; 
-}
+        margin:30px;
+    }
+    
+    .height{
+        height: 100vh;
+    }
+    
+    .search {
+       position: relative; 
+    }
+    
+    .search input{
+        height: 60px;
+        text-indent: 25px;
+        border: 2px solid #d6d4d4;
+    }
+    
+    .btn{
+        background-color: black;
+        border: none;
+    }
+    
+    #fiche_ARTISTES{
+        border: solid #211F1F;
+            background: black;
+            display : flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin:30px; 
+    }
+    
+    .fiche_artistes_name{
+        font-family: 'Bebas Neue';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        display : flex;
+        flex: 1000px;
+        flex: 80px;
+        flex: content;
+        text-align: center;
+        color: #3DAED2;
+    }
+    
+    .fiche_artistes_town{
+        font-style: normal;
+        font-weight: bold;
+        color : white;
+        flex: 1000px;
+        flex: 80px;
+        flex: content;
+    }
+    
+    .fiche_artistes_address{
+        font-style: normal;
+        font-weight: bold;
+        color : grey;
+        flex: 1000px;
+        flex: 80px;
+        flex: content;
+    }
+    
+    .fiche_artistes_date{
+        font-style: normal;
+        font-weight: bold;
+        color: #BD47E7;
+        flex: 1000px;
+        flex: content;
+    }
+    
+    .fiche_artistes_capacity{
+        font-style: normal;
+        color : rgb(138, 31, 84);
+        flex: 1000px;
+        flex: 80px;
+        flex: content;
+    }
+    
+    
+    .images-genre{
+        display : flex;
+        flex-direction : row;
+        flex-wrap : wrap;
+        justify-content : space-around;
+    
+    }
+    
+    .images-genre a:link{
+        text-decoration : none;
+    }
+    
+    .images-genre img{
+        margin : 30px;
+        width : 420px;
+        height : 380px;
+    
+        
+    }
+    
+    .images-pop-text{
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1;
+        position: absolute;
+        text-align: center;
+        font-family: Georgia;
+        margin-top: 62px; 
+        margin-left : 43px;
+        left: 0;
+        right: 0;
+        top: 60%;
+        color: white;
+        width: 420px;
+    }
+    
+    .images-rock-text{
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1;
+        position: absolute;
+        text-align: center;
+        font-family: Georgia;
+        margin-top : 62px;
+        left: 1;
+        right: 1;
+        top: 60%;
+        color: white;
+        width: 420px;
+    }
+    
+    .images-rap-text{
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1;
+        position: absolute;
+        text-align: center;
+        font-family: Georgia;
+        margin-top: 62px;
+        margin-right :43px;
+        left: 1;
+        right: 0;
+        top: 60%;
+        color: white;
+        width: 420px;
+    }
+    
+    .images-electro-text{
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1;
+        position: absolute;
+        text-align: center;
+        font-family: Georgia;
+        margin-top: 60px; 
+        margin-left : 43px;
+        left: 0;
+        right: 0;
+        top: 120%;
+        color: white;
+        width: 420px;
+    }
+    
+    .images-indie-text{
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1;
+        position: absolute;
+        text-align: center;
+        font-family: Georgia;
+        margin-top : 60px;
+        left: 1;
+        right: 1;
+        top: 120%;
+        color: white;
+        width: 420px;
+    }
+    
+    .images-punk-text{
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1;
+        position: absolute;
+        text-align: center;
+        font-family: Georgia;
+        margin-top: 60px;
+        margin-right : 43px;
+        left: 1;
+        right: 0;
+        top: 120%;
+        color: white;
+        width: 420px;
+    }
+    
+    #genre_name{
+    
+        font-family: 'Bebas Neue';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 48px;
+    
+        color: #3DAED2;
+    }
 
-.fiche_artistes_name{
-    font-family: 'Bebas Neue';
-    font-style: normal;
-    font-weight: bold;
-    font-size: 40px;
-    display : flex;
-    flex: 1000px;
-    flex: 80px;
-    flex: content;
-    text-align: center;
-    color: #3DAED2;
-}
 
-.fiche_artistes_town{
-    font-style: normal;
-    font-weight: bold;
-    color : white;
-    flex: 1000px;
-    flex: 80px;
-    flex: content;
-}
-
-.fiche_artistes_address{
-    font-style: normal;
-    font-weight: bold;
-    color : grey;
-    flex: 1000px;
-    flex: 80px;
-    flex: content;
-}
-
-.fiche_artistes_date{
-    font-style: normal;
-    font-weight: bold;
-    color: #BD47E7;
-    flex: 1000px;
-    flex: content;
-}
-
-.fiche_artistes_capacity{
-    font-style: normal;
-    color : rgb(138, 31, 84);
-    flex: 1000px;
-    flex: 80px;
-    flex: content;
-}
-
-
-.images-genre{
-	display : flex;
-	flex-direction : row;
-	flex-wrap : wrap;
-	justify-content : space-around;
-
-}
-
-.images-genre a:link{
-	text-decoration : none;
-}
-
-.images-genre img{
-	margin : 30px;
-	width : 420px;
-	height : 380px;
-
-	
-}
-
-.images-pop-text{
-	background: rgba(0, 0, 0, 0.8);
-    z-index: 1;
-    position: absolute;
-    text-align: center;
-    font-family: Georgia;
-    margin-top: 62px; 
-	margin-left : 43px;
-    left: 0;
-    right: 0;
-    top: 60%;
-    color: white;
-    width: 420px;
-}
-
-.images-rock-text{
-	background: rgba(0, 0, 0, 0.8);
-    z-index: 1;
-    position: absolute;
-    text-align: center;
-    font-family: Georgia;
-    margin-top : 62px;
-    left: 1;
-    right: 1;
-    top: 60%;
-    color: white;
-    width: 420px;
-}
-
-.images-rap-text{
-	background: rgba(0, 0, 0, 0.8);
-    z-index: 1;
-    position: absolute;
-    text-align: center;
-    font-family: Georgia;
-    margin-top: 62px;
-	margin-right :43px;
-    left: 1;
-    right: 0;
-    top: 60%;
-    color: white;
-    width: 420px;
-}
-
-.images-electro-text{
-	background: rgba(0, 0, 0, 0.8);
-    z-index: 1;
-    position: absolute;
-    text-align: center;
-    font-family: Georgia;
-    margin-top: 60px; 
-	margin-left : 43px;
-    left: 0;
-    right: 0;
-    top: 120%;
-    color: white;
-    width: 420px;
-}
-
-.images-indie-text{
-	background: rgba(0, 0, 0, 0.8);
-    z-index: 1;
-    position: absolute;
-    text-align: center;
-    font-family: Georgia;
-    margin-top : 60px;
-    left: 1;
-    right: 1;
-    top: 120%;
-    color: white;
-    width: 420px;
-}
-
-.images-punk-text{
-	background: rgba(0, 0, 0, 0.8);
-    z-index: 1;
-    position: absolute;
-    text-align: center;
-    font-family: Georgia;
-    margin-top: 60px;
-	margin-right : 43px;
-    left: 1;
-    right: 0;
-    top: 120%;
-    color: white;
-    width: 420px;
-}
-
-#genre_name{
-
-    font-family: 'Bebas Neue';
-    font-style: normal;
-    font-weight: bold;
-    font-size: 40px;
-    line-height: 48px;
-
-    color: #3DAED2;
-}
