@@ -64,32 +64,20 @@
 
     <div class="images-genre">
         <img src="./photos-genre/pop.jpg" class="rounded float-start" alt="pop">
-        <div class="images-pop-text">
-            <h1><a href="<?php echo 'fiche_genre.php?idGenre='.$genre1['idGenre'].'&genre='.$genre1['genre'].''?>"> <?php echo $genre1['genre']; ?></a></h1>
-        </div>
         <img src="./photos-genre/rock.jpg" class="rounded float-start" alt="rock">
-        <div class="images-rock-text">
-            <h1><a href="<?php echo 'fiche_genre.php?idGenre='.$genre2['idGenre'].'&genre='.$genre2['genre'].''?>"> <?php echo $genre2['genre']; ?></a></h1>
-        </div>
         <img src="./photos-genre/rap.jpg" class="rounded float-end" alt="rap">
-        <div class="images-rap-text">
-            <h1><a href="<?php echo 'fiche_genre.php?idGenre='.$genre3['idGenre'].'&genre='.$genre3['genre'].''?>"> <?php echo $genre3['genre']; ?></a></h1>
-        </div>
-
         <img src="./photos-genre/electro.jpg" class="rounded float-start" alt="electro">
-        <div class="images-electro-text">
-            <h1><a href="<?php echo 'fiche_genre.php?idGenre='.$genre4['idGenre'].'&genre='.$genre4['genre'].''?>"> <?php echo $genre4['genre']; ?></a></h1>
-        </div>
         <img src="./photos-genre/indie.jpg" class="rounded float-start" alt="indie">
-        <div class="images-indie-text">
-            <h1><a href="<?php echo 'fiche_genre.php?idGenre='.$genre5['idGenre'].'&genre='.$genre5['genre'].''?>"> <?php echo $genre5['genre']; ?></a></h1>
-        </div>
         <img src="./photos-genre/punk.jpg" class="rounded float-end" alt="punk">
-        <div class="images-punk-text">
-            <h1><a href="<?php echo 'fiche_genre.php?idGenre='.$genre6['idGenre'].'&genre='.$genre6['genre'].''?>"> <?php echo $genre6['genre']; ?></a></h1>
-        </div>
     </div>
-
+    <div class="text-genre">
+            <h1><a href="<?php echo 'fiche_genre.php?idGenre='.$genre1['idGenre'].'&genre='.$genre1['genre'].''?>"> <?php echo $genre1['genre']; ?></a></h1>
+            <h1><a href="<?php echo 'fiche_genre.php?idGenre='.$genre2['idGenre'].'&genre='.$genre2['genre'].''?>"> <?php echo $genre2['genre']; ?></a></h1>
+            <h1><a href="<?php echo 'fiche_genre.php?idGenre='.$genre3['idGenre'].'&genre='.$genre3['genre'].''?>"> <?php echo $genre3['genre']; ?></a></h1>
+            <h1><a href="<?php echo 'fiche_genre.php?idGenre='.$genre4['idGenre'].'&genre='.$genre4['genre'].''?>"> <?php echo $genre4['genre']; ?></a></h1>
+            <h1><a href="<?php echo 'fiche_genre.php?idGenre='.$genre5['idGenre'].'&genre='.$genre5['genre'].''?>"> <?php echo $genre5['genre']; ?></a></h1>
+            <h1><a href="<?php echo 'fiche_genre.php?idGenre='.$genre6['idGenre'].'&genre='.$genre6['genre'].''?>"> <?php echo $genre6['genre']; ?></a></h1>
+    </div>
     </div>
 
 
