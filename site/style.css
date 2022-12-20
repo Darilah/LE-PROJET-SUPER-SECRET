@@ -178,121 +178,51 @@ h1{
 }
 
 
-.images-genre{
+.images-genre {
 	display : flex;
 	flex-direction : row;
 	flex-wrap : wrap;
 	justify-content : space-around;
-
-}
-
-.images-genre a:link{
-	text-decoration : none;
+    position : relative;
 }
 
 .images-genre img{
 	margin : 30px;
 	width : 420px;
 	height : 380px;
-
-	
 }
 
-.images-pop-text{
-	background: rgba(0, 0, 0, 0.8);
-    z-index: 1;
-    position: absolute;
-    text-align: center;
-    font-family: Georgia;
-    margin-top: 125px; 
-	margin-left : 43px;
-    left: 0;
-    right: 0;
-    top: 60%;
-    color: white;
-    width: 420px;
+
+.text-genre a:link{
+	text-decoration : none;
 }
 
-.images-rock-text{
-	background: rgba(0, 0, 0, 0.8);
-    z-index: 1;
-    position: absolute;
-    text-align: center;
-    font-family: Georgia;
-    margin-top : 125px;
-    left: 1;
-    right: 1;
-    top: 60%;
-    color: white;
-    width: 420px;
+.text-genre {
+    display : flex;
+	flex-direction : row;
+	flex-wrap : wrap;
+	justify-content : space-around;
+    position : absolute;
 }
 
-.images-rap-text{
-	background: rgba(0, 0, 0, 0.8);
-    z-index: 1;
-    position: absolute;
+.text-genre h1 {
+    z-index: 1; 
+    position: relative;
     text-align: center;
     font-family: Georgia;
-    margin-top: 125px;
-	margin-right :43px;
-    left: 1;
-    right: 0;
-    top: 60%;
     color: white;
     width: 420px;
-}
-
-.images-electro-text{
-	background: rgba(0, 0, 0, 0.8);
-    z-index: 1;
-    position: absolute;
-    text-align: center;
-    font-family: Georgia;
-    margin-top: 125px; 
-	margin-left : 43px;
-    left: 0;
-    right: 0;
-    top: 120%;
-    color: white;
-    width: 420px;
-}
-
-.images-indie-text{
-	background: rgba(0, 0, 0, 0.8);
-    z-index: 1;
-    position: absolute;
-    text-align: center;
-    font-family: Georgia;
-    margin-top : 125px;
-    left: 1;
-    right: 1;
-    top: 120%;
-    color: white;
-    width: 420px;
-}
-
-.images-punk-text{
-	background: rgba(0, 0, 0, 0.8);
-    z-index: 1;
-    position: absolute;
-    text-align: center;
-    font-family: Georgia;
-    margin-top: 125px;
-	margin-right : 43px;
-    left: 1;
-    right: 0;
-    top: 120%;
-    color: white;
-    width: 420px;
+    height : 380px;
+    margin : 30px;
+    margin-top : 600px;
+    margin-bottom : -530px;
 }
 
 #genre_name{
-
     font-family: 'Bebas Neue';
     font-style: normal;
     font-weight: bold;
     font-size: 40px;
     line-height: 48px;
-
     color: #3DAED2;
 }
