@@ -177,22 +177,6 @@ h1{
     flex: content;
 }
 
-
-.images-genre {
-	display : flex;
-	flex-direction : row;
-	flex-wrap : wrap;
-	justify-content : space-around;
-    position : relative;
-}
-
-.images-genre img{
-	margin : 30px;
-	width : 420px;
-	height : 380px;
-}
-
-
 .text-genre a:link{
 	text-decoration : none;
 }
@@ -202,20 +186,91 @@ h1{
 	flex-direction : row;
 	flex-wrap : wrap;
 	justify-content : space-around;
-    position : absolute;
+    position : relative;
 }
 
-.text-genre h1 {
+.pop h1 {
+    background-image : url(./photos-genre/pop.jpg);
+    background-position : center;
+    background-size : cover;
     z-index: 1; 
     position: relative;
     text-align: center;
     font-family: Georgia;
-    color: white;
     width: 420px;
-    height : 380px;
+    height : 380px; 
     margin : 30px;
-    margin-top : 600px;
-    margin-bottom : -530px;
+    padding-top : 8em;
+}
+
+.rock h1 {
+    background-image : url(./photos-genre/rock.jpg);
+    background-position : center;
+    background-size : cover;
+    z-index: 1; 
+    position: relative;
+    text-align: center;
+    font-family: Georgia;
+    width: 420px;
+    height : 380px; 
+    margin : 30px;
+    padding-top : 8em;
+}
+
+.rap h1 {
+    background-image : url(./photos-genre/rap.jpg);
+    background-position : center;
+    background-size : cover;
+    z-index: 1; 
+    position: relative;
+    text-align: center;
+    font-family: Georgia;
+    width: 420px;
+    height : 380px; 
+    margin : 30px;
+    padding-top : 8em;
+}
+
+.electro h1 {
+    background-image : url(./photos-genre/electro.jpg);
+    background-position : center;
+    background-size : cover;
+    z-index: 1; 
+    position: relative;
+    text-align: center;
+    font-family: Georgia;
+    width: 420px;
+    height : 380px; 
+    margin : 30px;
+    padding-top : 8em;
+}
+
+.indie h1 {
+    background-image : url(./photos-genre/indie.jpg);
+    background-position : center;
+    background-size : cover;
+    z-index: 1; 
+    position: relative;
+    text-align: center;
+    font-family: Georgia;
+    width: 420px;
+    height : 380px; 
+    margin : 30px;
+    padding-top : 8em;
+}
+
+.punk h1 {
+    background-image : url(./photos-genre/punk.jpg);
+    background-position : center;
+    background-size : cover;
+    z-index: 1; 
+    position: relative;
+    text-align: center;
+    font-family: Georgia;
+    width: 420px;
+    height : 380px; 
+    margin : 30px;
+    padding-top : 8em;
 }
 
 #genre_name{
