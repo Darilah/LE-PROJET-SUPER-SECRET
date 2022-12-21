@@ -2,6 +2,7 @@
 <?php // login.php
 include_once('config/mysql.php'); 
 
+
 // Validation du formulaire
 if (isset($_POST['email']) &&  isset($_POST['password'])) {
 
