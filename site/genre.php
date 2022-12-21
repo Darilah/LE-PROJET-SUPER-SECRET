@@ -1,5 +1,5 @@
 <?php session_start(); // $_SESSION ?>
-<?php include_once('config/mysql.php'); ?>
+<?php include('config/mysql.php'); ?>
 
 <!DOCTYPE html>
 <html>
@@ -19,10 +19,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     
 </head>
-<body class="d-flex flex-column min-vh-100 w-auto">
-    <div class="container-flex">
+
+<body class="d-flex row flex-column min-vh-100 w-auto ">
 
     <?php include_once('header.php'); ?>
+
+    <div class="container-fluid">
+
+    <?php include_once('login.php'); ?>
+
+    <?php if(isset($_SESSION['LOGGED_USER'])): ?>
 
     <form>
         <h2 id="artiste_name">GENRES</h2>
@@ -62,22 +68,31 @@
 
     <!-- Récupération des données dans des variables -->
 
-    <div class="images-genre">
-        <img src="./photos-genre/pop.jpg" class="rounded float-start" alt="pop">
-        <img src="./photos-genre/rock.jpg" class="rounded float-start" alt="rock">
-        <img src="./photos-genre/rap.jpg" class="rounded float-end" alt="rap">
-        <img src="./photos-genre/electro.jpg" class="rounded float-start" alt="electro">
-        <img src="./photos-genre/indie.jpg" class="rounded float-start" alt="indie">
-        <img src="./photos-genre/punk.jpg" class="rounded float-end" alt="punk">
-    </div>
     <div class="text-genre">
+    <div class="pop">
             <h1><a href="<?php echo 'fiche_genre.php?idGenre='.$genre1['idGenre'].'&genre='.$genre1['genre'].''?>"> <?php echo $genre1['genre']; ?></a></h1>
+    </div>
+    <div class="rock">
             <h1><a href="<?php echo 'fiche_genre.php?idGenre='.$genre2['idGenre'].'&genre='.$genre2['genre'].''?>"> <?php echo $genre2['genre']; ?></a></h1>
+    </div>
+    <div class="rap">
             <h1><a href="<?php echo 'fiche_genre.php?idGenre='.$genre3['idGenre'].'&genre='.$genre3['genre'].''?>"> <?php echo $genre3['genre']; ?></a></h1>
+    </div>
+
+    <div class="electro">
             <h1><a href="<?php echo 'fiche_genre.php?idGenre='.$genre4['idGenre'].'&genre='.$genre4['genre'].''?>"> <?php echo $genre4['genre']; ?></a></h1>
+    </div>
+    <div class="indie">
             <h1><a href="<?php echo 'fiche_genre.php?idGenre='.$genre5['idGenre'].'&genre='.$genre5['genre'].''?>"> <?php echo $genre5['genre']; ?></a></h1>
+    </div>
+    <div class="punk">
             <h1><a href="<?php echo 'fiche_genre.php?idGenre='.$genre6['idGenre'].'&genre='.$genre6['genre'].''?>"> <?php echo $genre6['genre']; ?></a></h1>
     </div>
+    </div>
+
+    <?php endif; ?>
+
+
     </div>
 
 
