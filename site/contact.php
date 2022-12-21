@@ -15,10 +15,18 @@
     <!--Bootstrap java -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </head>
-<body class="d-flex flex-column min-vh-100">
-    <div class="container-fluid">
+
+<body class="d-flex row flex-column min-vh-100 w-auto ">
 
     <?php include_once('header.php'); ?>
+
+    <div class="container-fluid">
+
+    <?php include_once('login.php'); ?>
+
+    <?php if(isset($_SESSION['LOGGED_USER'])): ?>
+
+
         <h1>Contactez nous</h1>
         <form action="formulaire_contact.php" method="POST">
             <div class="mb-3">
@@ -33,6 +41,9 @@
             <button type="submit" class="btn btn-primary">Envoyer</button>
         </form>
         <br />
+
+    <?php endif; ?>
+
     </div>
 
     <?php include_once('footer.php'); ?>
