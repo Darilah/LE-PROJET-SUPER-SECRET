@@ -19,11 +19,15 @@ include('config/mysql.php'); ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js%22%3E"></script>
 
 </head>
-<body class="d-flex flex-column min-vh-100">
-    <div class="container-flex">
+<body class="d-flex row flex-column min-vh-100 w-auto">
 
-    <?php include_once('header.php'); ?>
+<?php include_once('header.php'); ?>
 
+    <div class="container-fluid">
+
+    <?php include_once('login.php'); ?>
+
+    <?php if(isset($_SESSION['LOGGED_USER'])): ?>
               <!-- input tag -->
         
         <form>
@@ -104,6 +108,7 @@ $rep->closeCursor();
 
 
 ?>
+<?php endif; ?>
 </div>
     <!-- linking javascript -->
     <script src="./artistes.js"></script>
