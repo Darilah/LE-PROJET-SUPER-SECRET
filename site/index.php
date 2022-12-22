@@ -1,14 +1,5 @@
-<?php
-try
-{
-	$db = new PDO('mysql:host=localhost;dbname=projet;charset=utf8', 'root', 'root');
-}
-catch (Exception $e)
-{
-        die('Erreur : ' . $e->getMessage());
-}
-?>
-
+<?php session_start(); // $_SESSION ?>
+<?php include_once('config/mysql.php'); ?>
 
 <!DOCTYPE html>
 <html lang = "fr" class="fontawesome-i2svg-active fontawesome-i2svg-complete">
@@ -46,6 +37,10 @@ catch (Exception $e)
     <?php include_once('header.php'); ?>
     <div class="container-fluid">
 
+        <?php include_once('login.php'); ?>
+
+        <?php if(isset($_SESSION['LOGGED_USER'])): ?>
+
         <section class="my-2 p-2 container-fluid ">
         <!--Titre-->
         <div class="row justify-content-center">
@@ -57,7 +52,6 @@ catch (Exception $e)
         <!--Titre-->
 
         <!-- Recherche-->
-        
         <div class="container-fluid distance">
             <div class="row col-10">
                     <form class="recherche" method="GET" action="resultats.php">
@@ -131,7 +125,7 @@ catch (Exception $e)
     <!--Featurettes-->
     <div id="ARTISTES">
  
-            <?php $reponse = $db->query('SELECT * FROM artistes where idArtist='. $valeurrand.'');?>
+            <?php $reponse = $mysqlC->query('SELECT * FROM artistes where idArtist='. $valeurrand.'');?>
             <?php $donnees = $reponse->fetch();?> 
 
 <?php
@@ -141,7 +135,7 @@ catch (Exception $e)
 
         
         <?php 
-        $reponse = $db->query('SELECT * FROM artistes where idArtist='. $valeurrand.'');
+        $reponse = $mysqlC->query('SELECT * FROM artistes where idArtist='. $valeurrand.'');
         if ($donnees = $reponse->fetch())
 
 { ?>       
@@ -154,8 +148,7 @@ catch (Exception $e)
             </div>
             <div class="col-4">
             <div class="img-responsive pull-right" width="250px" height="250px">
-            <button class="bg-transparent border-0"><img src="<?php echo $donnees['way_img'];?>"> </img></button>
-            </div>
+            <button class="bg-transparent border-0"><img src="<?php echo $donnees['way_img'];?>"> </img></button></div>
             </div>
         </div>
         <?php
@@ -172,7 +165,7 @@ $reponse->closeCursor(); // Termine le traitement de la requête
     ?>
 
 <?php 
-        $reponse = $db->query('SELECT * FROM artistes where idArtist='. $valeurrand.'');
+        $reponse = $mysqlC->query('SELECT * FROM artistes where idArtist='. $valeurrand.'');
         if ($donnees = $reponse->fetch())
 
 { ?>         
@@ -202,7 +195,7 @@ $reponse->closeCursor(); // Termine le traitement de la requête
     ?>
 
 <?php 
-        $reponse = $db->query('SELECT * FROM artistes where idArtist='. $valeurrand.'');
+        $reponse = $mysqlC->query('SELECT * FROM artistes where idArtist='. $valeurrand.'');
         if ($donnees = $reponse->fetch())
 
 { ?>         
@@ -240,10 +233,9 @@ $reponse->closeCursor(); // Termine le traitement de la requête
     <!--Qui sommes nous ?-->
 
     </div>
-
+    <?php endif; ?>
     </div>
 
     <?php include_once('footer.php'); ?>
 </body>
 </html>
-
