@@ -22,6 +22,7 @@ include('config/mysql.php'); ?>
 <body class="d-flex flex-column min-vh-100">
     <div class="container-flex">
     <?php include_once('header.php'); ?>
+    
     <?php $id_artiste = $_GET['idArtist']?>
     
     
@@ -49,24 +50,44 @@ $donnees_concerts = $reponse_concerts->fetch();?>
 <div id="fiche_ARTISTES">
 
 <h1 class="fiche_artistes_name"> <?php echo $donnees_concerts['name']; ?> </h1>
+<?php  
+// Connexion à la base de données
+$host = "localhost";
+$user = "root";
+$password = "root";
+$dbname = "projet";
 
+$conn = mysqli_connect($host, $user, $password, $dbname);
+$email= $_SESSION['LOGGED_USER'];
+$sql = "SELECT idUser FROM users WHERE email = '$email'";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    // Si l'adresse e-mail a été trouvée, récupérer l'identifiant de l'utilisateur
+    $row = mysqli_fetch_assoc($result);
+    $user_id = $row['idUser'];
+}
+?>
 <p class="fiche_artistes_date"> le <?php echo $donnees_concerts['date'];?> à <?php echo $donnees_concerts['hour']?>h </p>
 <p class="fiche_artistes_town"><?php echo $donnees_concerts['town'];?>  (<?php echo $donnees_concerts['country'];?>) </p>
 <p class="fiche_artistes_address"> <?php echo $donnees_concerts['address']; ?> </p>
 <p class="fiche_artistes_capacity"> <?php echo $donnees_concerts['capacity'];?> spectateurs</p>
+<a href="ajout_favoris.php?concert_id=<?php echo $donnees_concerts['idConcert']; ?>&user_id=<?php echo $user_id; ?>">Ajouter aux favoris</a>
 </div>
 <?php
 while($donnees_concerts = $reponse_concerts->fetch()){
 ?>
 <div id="fiche_ARTISTES">
 
+
 <h1 class="fiche_artistes_name"> <?php echo $donnees_concerts['name']; ?> </h1>
 <p class="fiche_artistes_date"> le <?php echo $donnees_concerts['date']; ?> à <?php echo $donnees_concerts['hour']?>h </p>
 <p class="fiche_artistes_town"><?php echo $donnees_concerts['town'];?>  (<?php echo $donnees_concerts['country'];?>) </p>
 <p class="fiche_artistes_address"> <?php echo $donnees_concerts['address']; ?> </p>
 <p class="fiche_artistes_capacity"> <?php echo $donnees_concerts['capacity'];?> spectateurs</p>
-
-
+<!--Favoris-->
+<a href="ajout_favoris.php?concert_id=<?php echo $donnees_concerts['idConcert']; ?>&user_id=<?php echo $user_id; ?>">Ajouter aux favoris</a>
+<!--Favoris-->
 </div>
 <?php
 }
