@@ -54,6 +54,10 @@ h1{
     background-image: url("./images/background_artistes_page.png");
 }
 
+.recherche{
+    margin-left : 10vw;
+}
+
 /*. c'est une class un # un id*/
 #images_artistes{
     max-width : 350px;
@@ -86,7 +90,6 @@ h1{
 
 #ARTISTES{
     border: solid #211F1F;
-    background: black;
     
     margin: auto;
     align-items: center;
