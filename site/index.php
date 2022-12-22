@@ -1,5 +1,14 @@
-<?php session_start(); // $_SESSION ?>
-<?php include_once('config/mysql.php'); ?>
+<?php
+try
+{
+	$db = new PDO('mysql:host=localhost;dbname=projet;charset=utf8', 'root', 'root');
+}
+catch (Exception $e)
+{
+        die('Erreur : ' . $e->getMessage());
+}
+?>
+
 
 <!DOCTYPE html>
 <html lang = "fr" class="fontawesome-i2svg-active fontawesome-i2svg-complete">
@@ -37,10 +46,6 @@
     <?php include_once('header.php'); ?>
     <div class="container-fluid">
 
-        <?php include_once('login.php'); ?>
-
-        <?php if(isset($_SESSION['LOGGED_USER'])): ?>
-
         <section class="my-2 p-2 container-fluid ">
         <!--Titre-->
         <div class="row justify-content-center">
@@ -52,16 +57,16 @@
         <!--Titre-->
 
         <!-- Recherche-->
+        
         <div class="container-fluid distance">
-            <div class="row h-8 d-flex justify-content-center align-items-center mb-auto">
-                <div class="col-md-10">
+            <div class="row col-10">
+                    <form class="recherche" method="GET" action="resultats.php">
                     <div class="search input-group">
                         <i class="fa fa-search"></i>
-                          <input type="text" class="form-control" placeholder="Tapez ici">
-                          <button class="btn btn-primary">Rechercher</button>
-                        </div>
-                    </div>  
-                </div>
+                        <input class="form-control" name="recherche" type="search" placeholder="Recherchez ici" aria-label="Search">
+                        <button class="btn btn-primary" type="submit">Rechercher</button>
+                    </div>
+                </form>
             </div>
         </div>
         <!-- Recherche-->
@@ -126,7 +131,7 @@
     <!--Featurettes-->
     <div id="ARTISTES">
  
-            <?php $reponse = $mysqlC->query('SELECT * FROM artistes where idArtist='. $valeurrand.'');?>
+            <?php $reponse = $db->query('SELECT * FROM artistes where idArtist='. $valeurrand.'');?>
             <?php $donnees = $reponse->fetch();?> 
 
 <?php
@@ -136,7 +141,7 @@
 
         
         <?php 
-        $reponse = $mysqlC->query('SELECT * FROM artistes where idArtist='. $valeurrand.'');
+        $reponse = $db->query('SELECT * FROM artistes where idArtist='. $valeurrand.'');
         if ($donnees = $reponse->fetch())
 
 { ?>       
@@ -149,7 +154,8 @@
             </div>
             <div class="col-4">
             <div class="img-responsive pull-right" width="250px" height="250px">
-            <button class="bg-transparent border-0"><img src="<?php echo $donnees['way_img'];?>"> </img></button></div>
+            <button class="bg-transparent border-0"><img src="<?php echo $donnees['way_img'];?>"> </img></button>
+            </div>
             </div>
         </div>
         <?php
@@ -158,7 +164,7 @@ $reponse->closeCursor(); // Termine le traitement de la requête
  
 ?>
 
-</div> 
+
 
 <?php
    srand(floor(time() / (60*60*24)));
@@ -166,7 +172,7 @@ $reponse->closeCursor(); // Termine le traitement de la requête
     ?>
 
 <?php 
-        $reponse = $mysqlC->query('SELECT * FROM artistes where idArtist='. $valeurrand.'');
+        $reponse = $db->query('SELECT * FROM artistes where idArtist='. $valeurrand.'');
         if ($donnees = $reponse->fetch())
 
 { ?>         
@@ -188,7 +194,7 @@ $reponse->closeCursor(); // Termine le traitement de la requête
 $reponse->closeCursor(); // Termine le traitement de la requête
  
 ?>
-</div> 
+
 
 <?php
    srand(floor(time() / (60*60*24)));
@@ -196,7 +202,7 @@ $reponse->closeCursor(); // Termine le traitement de la requête
     ?>
 
 <?php 
-        $reponse = $mysqlC->query('SELECT * FROM artistes where idArtist='. $valeurrand.'');
+        $reponse = $db->query('SELECT * FROM artistes where idArtist='. $valeurrand.'');
         if ($donnees = $reponse->fetch())
 
 { ?>         
@@ -234,9 +240,10 @@ $reponse->closeCursor(); // Termine le traitement de la requête
     <!--Qui sommes nous ?-->
 
     </div>
-    <?php endif; ?>
+
     </div>
 
     <?php include_once('footer.php'); ?>
 </body>
 </html>
+
