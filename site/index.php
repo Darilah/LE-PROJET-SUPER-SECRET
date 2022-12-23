@@ -1,6 +1,6 @@
 <?php session_start(); // $_SESSION ?>
 <?php include_once('config/mysql.php'); ?>
-
+<?php include_once('login.php'); ?>
 <!DOCTYPE html>
 <html lang = "fr" class="fontawesome-i2svg-active fontawesome-i2svg-complete">
 <head>
@@ -33,13 +33,14 @@
 
 </head>
 
+<?php if(isset($_SESSION['LOGGED_USER'])): ?>
 <body class="d-flex row flex-column min-vh-100 w-auto ">
     <?php include_once('header.php'); ?>
     <div class="container-fluid">
 
-        <?php include_once('login.php'); ?>
+        
 
-        <?php if(isset($_SESSION['LOGGED_USER'])): ?>
+        
 
         <section class="my-2 p-2 container-fluid ">
         <!--Titre-->
@@ -233,9 +234,10 @@ $reponse->closeCursor(); // Termine le traitement de la requête
     <!--Qui sommes nous ?-->
 
     </div>
-    <?php endif; ?>
+    
     </div>
 
     <?php include_once('footer.php'); ?>
+    <?php endif; ?>
 </body>
 </html>
