@@ -1,5 +1,6 @@
 <?php session_start();
 include('config/mysql.php'); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,6 +22,9 @@ include('config/mysql.php'); ?>
 </head>
 <body class="d-flex flex-column min-vh-100">
     <div class="container-flex">
+    <?php include_once('login.php'); ?>
+
+    <?php if(isset($_SESSION['LOGGED_USER'])): ?>
     <?php include_once('header.php'); ?>
     
     <?php $id_artiste = $_GET['idArtist']?>
@@ -113,5 +117,6 @@ while($donnees_concerts = $reponse_concerts->fetch()){
  
         </form>
 <?php include_once('footer.php');?>
+<?php endif; ?>
 </body>
 </html>

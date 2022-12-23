@@ -1,6 +1,8 @@
 <?php session_start(); ?>
+<?php include_once('login.php'); ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,14 +19,13 @@
 </head>
 
 <body class="d-flex row flex-column min-vh-100 w-auto ">
+    <?php if(isset($_SESSION['LOGGED_USER'])): ?>
 
     <?php include_once('header.php'); ?>
 
     <div class="container-fluid">
 
-    <?php include_once('login.php'); ?>
-
-    <?php if(isset($_SESSION['LOGGED_USER'])): ?>
+    
 
 
         <h1>Contactez nous</h1>
@@ -42,10 +43,11 @@
         </form>
         <br />
 
-    <?php endif; ?>
+    
 
     </div>
 
     <?php include_once('footer.php'); ?>
+    <?php endif; ?>
 </body>
 </html>

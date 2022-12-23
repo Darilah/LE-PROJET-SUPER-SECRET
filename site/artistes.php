@@ -20,14 +20,14 @@ include('config/mysql.php'); ?>
 
 </head>
 <body class="d-flex row flex-column min-vh-100 w-auto">
-
-<?php include_once('header.php'); ?>
-
-    <div class="container-fluid">
-
-    <?php include_once('login.php'); ?>
+<?php include_once('login.php'); ?>
 
     <?php if(isset($_SESSION['LOGGED_USER'])): ?>
+
+
+    <div class="container-fluid">
+    <?php include_once('header.php'); ?>
+    
               <!-- input tag -->
         
         <form>
@@ -108,10 +108,11 @@ $rep->closeCursor();
 
 
 ?>
-<?php endif; ?>
+
 </div>
     <!-- linking javascript -->
     <script src="./artistes.js"></script>
     <?php include_once('footer.php');?>
+    <?php endif; ?>
 </body>
 </html>
