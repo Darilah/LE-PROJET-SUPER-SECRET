@@ -1,6 +1,12 @@
 <?php session_start(); // $_SESSION ?>
+
 <?php include_once('config/mysql.php'); ?>
-<?php include_once('login.php'); ?>
+
+<?php if(!isset($_SESSION['LOGGED_USER'])) {
+    header("Location: login.php");
+    exit();
+} ?>
+
 <!DOCTYPE html>
 <html lang = "fr" class="fontawesome-i2svg-active fontawesome-i2svg-complete">
 <head>
@@ -33,14 +39,16 @@
 
 </head>
 
-<?php if(isset($_SESSION['LOGGED_USER'])): ?>
 <body class="d-flex row flex-column min-vh-100 w-auto ">
     <?php include_once('header.php'); ?>
     <div class="container-fluid">
 
-        
-
-        
+    <?php if(isset($_SESSION['message_bienvenue']) && ($_SESSION['message_bienvenue'] == 1)): ?>
+        <div class="alert alert-success" role="alert">
+            Bonjour <?php echo $_SESSION['LOGGED_USER']; ?> et bienvenue sur le site !
+            <?php unset($_SESSION['message_bienvenue']); ?>
+        </div> 
+        <?php endif; ?>
 
         <section class="my-2 p-2 container-fluid ">
         <!--Titre-->
@@ -117,11 +125,6 @@
     ?>
    
     <!-- random -->
-    
-    <!-- Photo -->
-
-
-    <!--Photo-->
 
     <!--Featurettes-->
     <div id="ARTISTES">
@@ -144,12 +147,12 @@
         <hr class="featurette-divider">
         <div class="row featurette">
             <div class="col-7">
-            <button class="bg-transparent border-0"><h1 class="text-white"><?php echo $donnees['name']; ?></h1></button>
-            <p class="lead"><?php echo $donnees['tour']; ?></p>
+            <a class="bg-transparent border-0 text-decoration-none" href="<?php echo 'fiche_artistes.php?idArtist='.$donnees['idArtist'].'&name='.$donnees['name'].'&description='.$donnees['description'].'&way_img='.$donnees['way_img'].'&link_ticket='.$donnees['link_ticket'].''?>"><h1 class="text-white"><?php echo $donnees['name']; ?></h1></a>
+                <p class="lead"><?php echo $donnees['tour']; ?></p>
             </div>
-            <div class="col-4">
+            <div class="col-4 order-md-1">
             <div class="img-responsive pull-right" width="250px" height="250px">
-            <button class="bg-transparent border-0"><img src="<?php echo $donnees['way_img'];?>"> </img></button></div>
+            <a class="bg-transparent border-0" href="<?php echo 'fiche_artistes.php?idArtist='.$donnees['idArtist'].'&name='.$donnees['name'].'&description='.$donnees['description'].'&way_img='.$donnees['way_img'].'&link_ticket='.$donnees['link_ticket'].''?>"><img src="<?php echo $donnees['way_img'];?>"> </img></a></div>
             </div>
         </div>
         <?php
@@ -174,12 +177,12 @@ $reponse->closeCursor(); // Termine le traitement de la requête
         <hr class="featurette-divider">
         <div class="row featurette gauche">
             <div class="col-7 order-md-2">
-                <button class="bg-transparent border-0"><h1 class="text-white"><?php echo $donnees['name']; ?></h1></button>
+            <a class="bg-transparent border-0 text-decoration-none" href="<?php echo 'fiche_artistes.php?idArtist='.$donnees['idArtist'].'&name='.$donnees['name'].'&description='.$donnees['description'].'&way_img='.$donnees['way_img'].'&link_ticket='.$donnees['link_ticket'].''?>"><h1 class="text-white"><?php echo $donnees['name']; ?></h1></a>
                 <p class="lead"><?php echo $donnees['tour']; ?></p>
             </div>
             <div class="col-4 order-md-1">
             <div class="img-responsive pull-right" width="250px" height="250px">
-            <button class="bg-transparent border-0"><img src="<?php echo $donnees['way_img'];?>"> </img></button></div>
+            <a class="bg-transparent border-0" href="<?php echo 'fiche_artistes.php?idArtist='.$donnees['idArtist'].'&name='.$donnees['name'].'&description='.$donnees['description'].'&way_img='.$donnees['way_img'].'&link_ticket='.$donnees['link_ticket'].''?>"><img src="<?php echo $donnees['way_img'];?>"> </img></a></div>
             </div>
         </div>
 
@@ -204,12 +207,12 @@ $reponse->closeCursor(); // Termine le traitement de la requête
         <hr class="featurette-divider">
         <div class="row featurette">
             <div class="col-7">
-            <button class="bg-transparent border-0"><h1 class="text-white"><?php echo $donnees['name']; ?></h1></button>
-            <p class="lead"><?php echo $donnees['tour']; ?></p>
+            <a class="bg-transparent border-0 text-decoration-none" href="<?php echo 'fiche_artistes.php?idArtist='.$donnees['idArtist'].'&name='.$donnees['name'].'&description='.$donnees['description'].'&way_img='.$donnees['way_img'].'&link_ticket='.$donnees['link_ticket'].''?>"><h1 class="text-white"><?php echo $donnees['name']; ?></h1></a>
+                <p class="lead"><?php echo $donnees['tour']; ?></p>
             </div>
-            <div class="col-4">
+            <div class="col-4 order-md-1">
             <div class="img-responsive pull-right" width="250px" height="250px">
-            <button class="bg-transparent border-0"><img src="<?php echo $donnees['way_img'];?>"> </img></button></div>
+            <a class="bg-transparent border-0" href="<?php echo 'fiche_artistes.php?idArtist='.$donnees['idArtist'].'&name='.$donnees['name'].'&description='.$donnees['description'].'&way_img='.$donnees['way_img'].'&link_ticket='.$donnees['link_ticket'].''?>"><img src="<?php echo $donnees['way_img'];?>"> </img></a></div>
             </div>
         </div>
         <hr class="featurette-divider">
@@ -233,11 +236,6 @@ $reponse->closeCursor(); // Termine le traitement de la requête
         </div>
     <!--Qui sommes nous ?-->
 
-    </div>
-    
-    </div>
-
     <?php include_once('footer.php'); ?>
-    <?php endif; ?>
 </body>
 </html>
